@@ -19,10 +19,10 @@ This project is designed to educate users about elections through interactive mo
 
 ### Interactive Journey
 - Step-by-step election process:
-  - 📝 Register
-  - 🧑‍💼 Candidates
-  - 🗳️ Vote
-  - 📊 Counting 
+  -  Register
+  -  Candidates
+  -  Vote
+  -  Counting 
 - Interactive card-based UI
 
 ---
@@ -95,19 +95,10 @@ election-process-education/
 ```bash
 npm install
 node server.js
-
+```
 Open in browser:
 
 http://localhost:8080
-
----
-
-## Deployment
-gcloud run deploy election-service \
---source . \
---region asia-south1 \
---allow-unauthenticated \
---set-env-vars GROQ_API_KEY=YOUR_API_KEY
 
 ---
 
