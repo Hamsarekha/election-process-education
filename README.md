@@ -105,7 +105,7 @@ http://localhost:8080
 - Multi-language support
 - UI enhancements
 
---
+---
 
 ## Author
 
