@@ -1,8 +1,10 @@
 import express from "express";
 import cors from "cors";
+import compression from "compression";
 
 const app = express();
 app.use(cors());
+app.use(compression());
 app.use(express.json());
 app.use((req, res, next) => {
   res.set('Cache-Control', 'no-store');
@@ -13,8 +15,21 @@ app.use(express.static("."));
 
 const API_KEY = process.env.GROQ_API_KEY;
 
+if (!API_KEY) {
+  console.error("❌ GROQ_API_KEY is not set!");
+  process.exit(1);
+}
+
 app.post("/ask", async (req, res) => {
   const userInput = req.body.message;
+
+  if (!userInput || typeof userInput !== "string") {
+    return res.status(400).json({ reply: "Please enter a valid question." });
+  }
+
+  if (userInput.length > 500) {
+    return res.status(400).json({ reply: "Message too long. Please keep it under 500 characters." });
+  }
 
   try {
     const response = await fetch(
@@ -45,12 +60,11 @@ app.post("/ask", async (req, res) => {
     console.log("Groq response:", JSON.stringify(data));
 
     const reply = data?.choices?.[0]?.message?.content;
-
     res.json({ reply: reply || "No response from AI" });
 
   } catch (err) {
-    console.error(err);
-    res.json({ reply: "Server error" });
+    console.error("Server error:", err);
+    res.status(500).json({ reply: "Something went wrong. Please try again." });
   }
 });
 
