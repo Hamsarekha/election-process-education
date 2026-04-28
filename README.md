@@ -68,25 +68,22 @@ This project is designed to educate users about elections through interactive mo
 
 ---
 
-## Project Structure
+##  Project Structure
 
-
+```
 election-process-education/
-│
 ├── index.html
 ├── learn.html
 ├── journey.html
 ├── quiz.html
 ├── ai.html
-│
 ├── style.css
 ├── script.js
-│
 ├── server.js
 ├── package.json
 ├── Dockerfile
-│
 └── README.md
+```
 
 ---
 
