@@ -1,3 +1,4 @@
+![Preview](screenshot.png)
 # 🗳️ Election Process Education Platform
 
 An interactive and AI-powered web application that helps users understand the **election process** in a simple, engaging, and modern way.
