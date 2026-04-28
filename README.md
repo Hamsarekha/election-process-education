@@ -103,10 +103,10 @@ http://localhost:8080
 ---
 
 ## Future Improvements
-Chat history
-Voice input
-Multi-language support
-UI enhancements
+- Chat history
+- Voice input
+- Multi-language support
+- UI enhancements
 
 --
 
