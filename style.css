@@ -1,0 +1,464 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+  min-height: 100vh;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  align-items: center;
+}
+
+.nav-btn {
+  background: #2563eb;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+}
+
+/* ===== HERO ===== */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: #cbd5e1;
+  margin-bottom: 20px;
+}
+
+.cta-btn {
+  background: #7c3aed;
+  padding: 12px 25px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+}
+
+/* ===== FEATURES GRID ===== */
+.features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  padding: 40px;
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 18px;
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 180px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.card h3 {
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: #cbd5e1;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.card-btn {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #60a5fa;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.3s;
+  width: fit-content;
+}
+
+.card-btn:hover {
+  background: #2563eb;
+  color: white;
+  transform: translateX(5px);
+}
+
+.card-btn.primary {
+  background: #7c3aed;
+  color: white;
+}
+
+.card-btn.primary:hover {
+  background: #6d28d9;
+}
+
+.highlight {
+  border: 1px solid #7c3aed;
+  background: rgba(124, 58, 237, 0.2);
+}
+
+/* ===== JOURNEY SECTION ===== */
+.journey-section {
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.subtitle {
+  color: #60a5fa;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.journey-section h1 {
+  font-size: 2.8rem;
+  margin-bottom: 50px;
+}
+
+.journey-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.journey-card {
+  position: relative;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  text-align: left;
+  transition: 0.4s;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.journey-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.step-num {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.journey-card::after {
+  content: attr(data-step);
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  font-size: 80px;
+  color: rgba(255, 255, 255, 0.05);
+}
+
+.journey-card h3 {
+  margin: 10px 0;
+}
+
+.journey-card p {
+  color: #cbd5e1;
+}
+
+/* ===== BACK BUTTON ===== */
+.back-btn {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 10px 20px;
+  background: #7c3aed;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+/* ===== QUIZ ===== */
+.center-page {
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 25px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  text-align: center;
+  margin-top: 20px;
+}
+
+#question {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+#options button {
+  width: 100%;
+  margin: 8px 0;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#options button:hover {
+  transform: scale(1.05);
+  background: #1d4ed8;
+}
+
+/* ===== AI CHAT ===== */
+.ai-container {
+  max-width: 700px;
+  margin: auto;
+  padding: 40px 20px 20px;
+  text-align: center;
+}
+
+.ai-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.chat-box {
+  width: 100%;
+  min-height: 300px;
+  max-height: 50vh;
+  overflow-y: auto;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.message {
+  margin: 10px;
+  padding: 12px 15px;
+  border-radius: 15px;
+  max-width: 75%;
+  word-wrap: break-word;
+}
+
+.user {
+  background: #2563eb;
+  margin-left: auto;
+}
+
+.ai {
+  background: rgba(255, 255, 255, 0.1);
+  text-align: left;
+}
+
+.ai-input {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.ai-input input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+}
+
+.ai-input input::placeholder {
+  color: #94a3b8;
+}
+
+.ai-input button {
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: none;
+  background: #7c3aed;
+  color: white;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.ai-input button:hover {
+  background: #6d28d9;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #94a3b8;
+}
+
+/* ===== TABLET (max 900px) ===== */
+@media (max-width: 900px) {
+
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .journey-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .journey-section h1 {
+    font-size: 2rem;
+  }
+
+  .navbar {
+    padding: 15px 25px;
+  }
+}
+
+/* ===== MOBILE (max 600px) ===== */
+@media (max-width: 600px) {
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  .hero {
+    padding: 50px 15px;
+  }
+
+  .hero h2 {
+    font-size: 1.6rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  /* ONE CARD PER ROW on mobile */
+  .features {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .card {
+    height: auto;
+    padding: 20px;
+  }
+
+  /* ONE JOURNEY/LEARN CARD PER ROW on mobile */
+  .journey-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .journey-section {
+    padding: 30px 15px;
+  }
+
+  .journey-section h1 {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+  }
+
+  .journey-card {
+    padding: 20px;
+  }
+
+  .journey-card::after {
+    display: none;
+  }
+
+  /* QUIZ - remove big empty space at top */
+  .center-page {
+    justify-content: flex-start;
+    padding-top: 50px;
+  }
+
+  .quiz-card {
+    padding: 20px;
+    margin: 10px;
+  }
+
+  #question {
+    font-size: 1rem;
+  }
+
+  #options button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  /* AI CHAT */
+  .ai-container {
+    padding: 20px 15px;
+  }
+
+  .ai-title {
+    font-size: 1.6rem;
+  }
+
+  .chat-box {
+    min-height: 200px;
+    max-height: 40vh;
+  }
+
+  .message {
+    max-width: 90%;
+    font-size: 0.9rem;
+  }
+
+  .back-btn {
+    margin-top: 25px;
+  }
+
+  footer {
+    font-size: 0.85rem;
+  }
+}
+
+/* ===== SMALL MOBILE (max 380px) ===== */
+@media (max-width: 380px) {
+
+  .hero h2 {
+    font-size: 1.3rem;
+  }
+
+  .ai-title {
+    font-size: 1.3rem;
+  }
+
+  .card, .journey-card {
+    padding: 15px;
+  }
+}
