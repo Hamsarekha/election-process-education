@@ -1,23 +1,23 @@
 ![Preview](screenshot.png)
-# 🗳️ Election Process Education Platform
+## Election Process Education Platform
 
 An interactive and AI-powered web application that helps users understand the **election process** in a simple, engaging, and modern way.
 
 ---
 
-## 🌐 Live Website
+## Live Website
 https://election-service-766618428685.asia-south1.run.app
 
 ---
 
-## 📌 Overview
+## Overview
 This project is designed to educate users about elections through interactive modules, quizzes, and an AI-powered assistant. It simplifies concepts like voting, democracy, and election procedures into easy-to-understand content.
 
 ---
 
-## 🚀 Features
+## Features
 
-### 🎮 Interactive Journey
+### Interactive Journey
 - Step-by-step election process:
   - 📝 Register
   - 🧑‍💼 Candidates
@@ -27,7 +27,7 @@ This project is designed to educate users about elections through interactive mo
 
 ---
 
-### 📘 Learn Section
+### Learn Section
 - What is voting
 - What is democracy
 - Why elections matter
@@ -35,21 +35,21 @@ This project is designed to educate users about elections through interactive mo
 
 ---
 
-### 🧠 Quiz Module
+### Quiz Module
 - Multiple choice questions
 - Instant feedback
 - Interactive UI
 
 ---
 
-### 🤖 Ask AI
+### Ask AI
 - Ask questions about elections
 - AI gives simple and clear answers 
 - Powered by Groq API (LLaMA 3)
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 - HTML
@@ -68,7 +68,7 @@ This project is designed to educate users about elections through interactive mo
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 
 election-process-education/
@@ -88,10 +88,9 @@ election-process-education/
 │
 └── README.md
 
-
 ---
 
-## ⚙️ Run Locally
+##  Run Locally
 
 ```bash
 npm install
@@ -101,42 +100,27 @@ Open in browser:
 
 http://localhost:8080
 
+---
 
-##☁️ Deployment
+## Deployment
 gcloud run deploy election-service \
 --source . \
 --region asia-south1 \
 --allow-unauthenticated \
 --set-env-vars GROQ_API_KEY=YOUR_API_KEY
 
+---
 
-##📱 Responsive Design
-Mobile 📱
-Tablet 📲
-Desktop 💻
-
-
-##🔐 Security
-API key stored in environment variables
-Not exposed in frontend
-
-
-##🌟 Future Improvements
+## Future Improvements
 Chat history
 Voice input
 Multi-language support
 UI enhancements
 
+--
 
-##👩‍💻 Author
+## Author
 
 S Hamsarekha
 
 
-##⭐ Support
-
-If you like this project:
-
-⭐ Star the repository
-🍴 Fork it
-🚀 Share it
