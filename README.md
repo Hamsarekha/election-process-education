@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ![Preview](screenshot.png)
 ## Election Process Education Platform
 =======
@@ -202,6 +201,3 @@ votesmart/
 - Google Fonts preconnect
 - DNS prefetch for API
 
-## License
-MIT
->>>>>>> 590e68a (Updated project changes)
