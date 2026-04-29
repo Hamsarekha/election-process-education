@@ -1,137 +1,56 @@
-// JOURNEY
-const steps = [
-  "Register with Voter ID",
-  "Understand candidates",
-  "Vote using EVM",
-  "Counting votes",
-  "🎉 Completed!"
-];
-
-let stepIndex = 0;
-
-function updateTimeline() {
-  const elements = document.querySelectorAll(".step");
-
-  elements.forEach((el, i) => {
-    el.classList.remove("active", "done");
-
-    if (i < stepIndex) el.classList.add("done");
-    else if (i === stepIndex) el.classList.add("active");
-  });
-}
-
-function nextStep() {
-  document.getElementById("journeyText").innerText = steps[stepIndex];
-  updateTimeline();
-
-  if (stepIndex < steps.length - 1) stepIndex++;
-}
-
-// LEARN
-function showInfo(step) {
-  const data = {
-    registration: `
-📝 REGISTRATION
-
-Before voting, every citizen must register with the Election Commission.
-
-• You must be 18 years or older  
-• Apply online or offline for a Voter ID (EPIC)  
-• Provide proof of identity and address  
-• Once approved, your name appears in the electoral roll  
-
-👉 Without registration, you cannot vote.
-    `,
-
-    campaign: `
-📢 CAMPAIGN
-
-Candidates and political parties communicate their ideas to voters.
-
-• They organize rallies, speeches, and advertisements  
-• Share plans for development, economy, and society  
-• Try to convince voters to support them  
-
-👉 This helps voters make informed decisions.
-    `,
-
-    voting: `
-🗳️ VOTING
-
-On election day, citizens cast their vote.
-
-• Go to your assigned polling booth  
-• Verify identity using Voter ID or valid document  
-• Vote using an Electronic Voting Machine (EVM)  
-• Your vote is secret and secure  
-
-👉 Every vote counts equally.
-    `,
-
-    counting: `
-📊 COUNTING
-
-After voting ends, all votes are counted.
-
-• EVMs are opened under strict supervision  
-• Officials count votes carefully  
-• Results are announced publicly  
-
-👉 The candidate with the highest votes wins.
-    `,
-
-    importance: `
-⭐ WHY ELECTIONS MATTER
-
-Elections are the foundation of democracy.
-
-• Citizens choose their leaders  
-• Government becomes accountable to people  
-• Ensures fair representation  
-• Allows peaceful change of power  
-
-👉 Voting is both a right and a responsibility.
-    `
-  };
-
-  document.getElementById("infoBox").innerText = data[step];
-}
-
-// AI
+// ===== AI CHAT =====
 async function askAI() {
   const input = document.getElementById("userInput");
   const chatBox = document.getElementById("chatBox");
 
-  const text = input.value;
+  if (!input || !chatBox) return;
+
+  const text = input.value.trim();
   if (!text) return;
 
-  chatBox.innerHTML += `<div class="message user">${text}</div>`;
+  if (text.length > 500) {
+    alert("Please keep your question under 500 characters.");
+    return;
+  }
+
+  // Show user message
+  const userMsg = document.createElement("div");
+  userMsg.className = "message user";
+  userMsg.textContent = text;
+  chatBox.appendChild(userMsg);
+
   input.value = "";
 
-  chatBox.innerHTML += `<div class="message ai">Thinking...</div>`;
+  // Show thinking indicator
+  const thinkingMsg = document.createElement("div");
+  thinkingMsg.className = "message ai";
+  thinkingMsg.textContent = "Thinking...";
+  chatBox.appendChild(thinkingMsg);
+  chatBox.scrollTop = chatBox.scrollHeight;
 
   try {
     const res = await fetch("https://election-service-766618428685.asia-south1.run.app/ask", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: text })
     });
 
-    const data = await res.json();
+    if (!res.ok) {
+      throw new Error("Server error: " + res.status);
+    }
 
-    const msgs = document.querySelectorAll(".ai");
-    msgs[msgs.length - 1].innerText = data.reply || "No response";
+    const data = await res.json();
+    thinkingMsg.textContent = data.reply || "No response received.";
 
   } catch (err) {
-    const msgs = document.querySelectorAll(".ai");
-    msgs[msgs.length - 1].innerText = "❌ Error connecting to AI";
-    console.error(err);
+    thinkingMsg.textContent = "❌ Error connecting to AI. Please try again.";
+    console.error("AI error:", err);
   }
+
+  chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-// QUIZ
+// ===== QUIZ =====
 const quiz = [
   {
     q: "What is the minimum voting age in India?",
@@ -155,59 +74,65 @@ const quiz = [
   },
   {
     q: "Why are elections important?",
-    options: [
-      "To select leaders",
-      "For entertainment",
-      "For holidays"
-    ],
+    options: ["To select leaders", "For entertainment", "For holidays"],
     answer: "To select leaders"
   }
 ];
 
-let q = 0, score = 0;
+let currentQuestion = 0;
+let score = 0;
 
 function loadQuiz() {
-  document.getElementById("question").innerText = quiz[q].q;
+  const questionEl = document.getElementById("question");
+  const optionsEl = document.getElementById("options");
 
-  const optionsDiv = document.getElementById("options");
-  optionsDiv.innerHTML = "";
+  if (!questionEl || !optionsEl) return;
 
-  quiz[q].options.forEach(opt => {
+  const current = quiz[currentQuestion];
+  questionEl.textContent = current.q;
+  optionsEl.innerHTML = "";
+
+  current.options.forEach(opt => {
     const btn = document.createElement("button");
-    btn.innerText = opt;
-    btn.onclick = () => check(opt);
-    optionsDiv.appendChild(btn);
+    btn.textContent = opt;
+    btn.setAttribute("aria-label", "Answer: " + opt);
+    btn.addEventListener("click", () => checkAnswer(opt));
+    optionsEl.appendChild(btn);
   });
 }
 
-function check(ans) {
+function checkAnswer(selected) {
   const buttons = document.querySelectorAll("#options button");
+  const correct = quiz[currentQuestion].answer;
 
   buttons.forEach(btn => {
     btn.disabled = true;
-
-    if (btn.innerText === quiz[q].answer) {
-      btn.style.background = "green";
-    } else {
-      btn.style.background = "red";
+    if (btn.textContent === correct) {
+      btn.style.background = "#16a34a";
+    } else if (btn.textContent === selected) {
+      btn.style.background = "#dc2626";
     }
   });
 
-  if (ans === quiz[q].answer) score++;
+  if (selected === correct) score++;
 
   setTimeout(() => {
-    q++;
-    if (q < quiz.length) {
+    currentQuestion++;
+    if (currentQuestion < quiz.length) {
       loadQuiz();
     } else {
-      document.getElementById("question").innerText = "🎉 Quiz Completed!";
-      document.getElementById("options").innerHTML = "";
-      document.getElementById("score").innerText =
-        "Your Score: " + score + "/" + quiz.length;
+      const questionEl = document.getElementById("question");
+      const optionsEl = document.getElementById("options");
+      const scoreEl = document.getElementById("score");
+
+      questionEl.textContent = "🎉 Quiz Completed!";
+      optionsEl.innerHTML = "";
+      scoreEl.textContent = "Your Score: " + score + "/" + quiz.length;
     }
   }, 1000);
 }
 
+// Initialize quiz only on quiz page
 if (document.getElementById("question")) {
-    loadQuiz();
+  loadQuiz();
 }

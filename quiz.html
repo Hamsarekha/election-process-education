@@ -1,38 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5FVMT0S0B"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-Z5FVMT0S0B');
-</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Test your election knowledge with VoteSmart quiz.">
+  <meta name="theme-color" content="#0f172a">
+  <title>Election Quiz - VoteSmart</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5FVMT0S0B"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Z5FVMT0S0B');
+  </script>
 </head>
 
 <body>
 
-    <section class="center-page">
+  <main class="center-page" role="main">
 
-        <p class="subtitle">TEST YOURSELF</p>
-        <h1>Election Quiz</h1>
+    <p class="subtitle" aria-label="Section label">TEST YOURSELF</p>
+    <h1>Election Quiz</h1>
 
-        <div class="quiz-card">
-            <p id="question"></p>
-            <div id="options"></div>
-            <p id="score"></p>
-        </div>
-
-        <a href="index.html" class="back-btn">← Back</a>
-
+    <section
+      class="quiz-card"
+      role="region"
+      aria-label="Quiz questions"
+      aria-live="polite"
+    >
+      <p id="question" aria-live="polite"></p>
+      <div id="options" role="group" aria-label="Answer options"></div>
+      <p id="score" aria-live="polite" aria-atomic="true"></p>
     </section>
 
-    <script src="script.js"></script>
+    <a href="index.html" class="back-btn" aria-label="Go back to home page">← Back</a>
+
+  </main>
+
+  <script src="script.js"></script>
 </body>
 
 </html>

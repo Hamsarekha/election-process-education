@@ -1,58 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Election Journey</title>
+  <meta name="description" content="Explore the step-by-step election journey on VoteSmart.">
+  <meta name="theme-color" content="#0f172a">
+  <title>Election Journey - VoteSmart</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5FVMT0S0B"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-Z5FVMT0S0B');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5FVMT0S0B"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Z5FVMT0S0B');
+  </script>
 </head>
 
 <body>
 
-  <section class="journey-section">
+  <main class="journey-section" role="main">
 
     <p class="subtitle">HOW IT WORKS</p>
     <h1>Election Journey</h1>
 
-    <div class="journey-grid">
+    <div class="journey-grid" role="list" aria-label="Election steps">
 
-      <div class="journey-card active">
-        <span class="step-num">01</span>
+      <article class="journey-card" role="listitem">
+        <span class="step-num" aria-label="Step 1">01</span>
         <h3>🎮 Register</h3>
         <p>Citizens register for a voter ID to become eligible to vote in elections.</p>
-      </div>
+      </article>
 
-      <div class="journey-card">
-        <span class="step-num">02</span>
+      <article class="journey-card" role="listitem">
+        <span class="step-num" aria-label="Step 2">02</span>
         <h3>🧑‍💼 Candidates</h3>
         <p>Political candidates campaign and present their ideas to attract voters.</p>
-      </div>
+      </article>
 
-      <div class="journey-card">
-        <span class="step-num">03</span>
+      <article class="journey-card" role="listitem">
+        <span class="step-num" aria-label="Step 3">03</span>
         <h3>🗳️ Vote</h3>
         <p>Voters cast their vote using secure Electronic Voting Machines (EVMs).</p>
-      </div>
+      </article>
 
-      <div class="journey-card">
-        <span class="step-num">04</span>
+      <article class="journey-card" role="listitem">
+        <span class="step-num" aria-label="Step 4">04</span>
         <h3>📊 Counting</h3>
         <p>Votes are counted transparently and results are announced publicly.</p>
-      </div>
+      </article>
 
     </div>
 
-    <a href="index.html" class="back-btn">← Back</a>
+    <a href="index.html" class="back-btn" aria-label="Go back to home page">← Back</a>
 
-  </section>
+  </main>
 
 </body>
 

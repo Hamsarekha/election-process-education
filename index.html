@@ -4,65 +4,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VoteSmart</title>
+  <meta name="description" content="VoteSmart - Learn about Indian elections, voting process, and democracy with AI assistance.">
+  <meta name="theme-color" content="#0f172a">
+  <title>VoteSmart - Learn Elections the Smart Way</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="dns-prefetch" href="https://api.groq.com">
   <link rel="stylesheet" href="style.css">
-  <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5FVMT0S0B"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-Z5FVMT0S0B');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5FVMT0S0B"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Z5FVMT0S0B');
+  </script>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <header class="navbar">
+  <header class="navbar" role="banner">
     <h1>🗳️ VoteSmart</h1>
-    <a href="ai.html" class="nav-btn">Try AI →</a>
+    <nav aria-label="Main navigation">
+      <a href="ai.html" class="nav-btn" aria-label="Try AI Assistant">Try AI →</a>
+    </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h2>Learn Elections the Smart Way</h2>
-    <p>Interactive platform to understand voting, candidates, and process step-by-step.</p>
-    <a href="journey.html" class="cta-btn">Start Journey</a>
-  </section>
+  <main>
+    <section class="hero" aria-label="Welcome section">
+      <h2>Learn Elections the Smart Way</h2>
+      <p>Interactive platform to understand voting, candidates, and process step-by-step.</p>
+      <a href="journey.html" class="cta-btn" aria-label="Start your election journey">Start Journey</a>
+    </section>
 
-  <!-- FEATURES -->
-  <section class="features">
+    <section class="features" aria-label="Platform features">
 
-    <div class="card">
-      <h3>🎮 Interactive Journey</h3>
-      <p>Experience elections step-by-step visually.</p>
-      <a href="journey.html" class="card-btn">Explore →</a>
-    </div>
+      <article class="card" role="article">
+        <h3>🎮 Interactive Journey</h3>
+        <p>Experience elections step-by-step visually.</p>
+        <a href="journey.html" class="card-btn" aria-label="Explore election journey">Explore →</a>
+      </article>
 
-    <div class="card">
-      <h3>📘 Learn Concepts</h3>
-      <p>Understand voting system clearly with examples.</p>
-      <a href="learn.html" class="card-btn">Learn →</a>
-    </div>
+      <article class="card" role="article">
+        <h3>📘 Learn Concepts</h3>
+        <p>Understand voting system clearly with examples.</p>
+        <a href="learn.html" class="card-btn" aria-label="Learn election concepts">Learn →</a>
+      </article>
 
-    <div class="card">
-      <h3>🧠 Quiz Yourself</h3>
-      <p>Test your knowledge and track progress.</p>
-      <a href="quiz.html" class="card-btn">Start Quiz →</a>
-    </div>
+      <article class="card" role="article">
+        <h3>🧠 Quiz Yourself</h3>
+        <p>Test your knowledge and track progress.</p>
+        <a href="quiz.html" class="card-btn" aria-label="Take election quiz">Start Quiz →</a>
+      </article>
 
-    <div class="card highlight">
-      <h3>🤖 Ask AI</h3>
-      <p>Get instant answers powered by Gemini AI.</p>
-      <a href="ai.html" class="card-btn primary">Ask Now →</a>
-    </div>
+      <article class="card highlight" role="article">
+        <h3>🤖 Ask AI</h3>
+        <p>Get instant answers powered by Llama AI.</p>
+        <a href="ai.html" class="card-btn primary" aria-label="Ask AI about elections">Ask Now →</a>
+      </article>
 
-  </section>
+    </section>
+  </main>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>Built for Election Awareness 🚀</p>
+  <footer role="contentinfo">
+    <p>Built for Election Awareness 🚀 | VoteSmart © 2026</p>
   </footer>
 
 </body>

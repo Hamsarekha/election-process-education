@@ -1,34 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ask VoteSmart AI any question about Indian elections and voting.">
+  <meta name="theme-color" content="#0f172a">
   <title>Ask Election AI - VoteSmart</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5FVMT0S0B"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-Z5FVMT0S0B');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5FVMT0S0B"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Z5FVMT0S0B');
+  </script>
 </head>
+
 <body>
+
   <main class="ai-container" role="main">
-    <a href="index.html" class="back-btn" aria-label="Go back to home">← Back</a>
+
+    <a href="index.html" class="back-btn" aria-label="Go back to home page">← Back</a>
+
     <h1 class="ai-title">Ask Election AI</h1>
-    <div id="chatBox" class="chat-box" aria-live="polite" aria-label="Chat messages"></div>
-    <div class="ai-input" role="search">
-      <input 
-        id="userInput" 
-        placeholder="Ask anything about elections..." 
+    <p style="color:#94a3b8; margin-bottom:20px;">Ask anything about elections, voting, or democracy</p>
+
+    <div
+      id="chatBox"
+      class="chat-box"
+      role="log"
+      aria-live="polite"
+      aria-label="Chat conversation"
+      aria-relevant="additions"
+    ></div>
+
+    <div class="ai-input" role="search" aria-label="Ask a question">
+      <label for="userInput" class="sr-only">Type your election question</label>
+      <input
+        id="userInput"
+        type="text"
+        placeholder="Ask anything about elections..."
         aria-label="Type your election question here"
         autocomplete="off"
+        maxlength="500"
+        onkeydown="if(event.key==='Enter') askAI()"
       />
-      <button onclick="askAI()" aria-label="Send message">→</button>
+      <button onclick="askAI()" aria-label="Send your question">→</button>
     </div>
+
   </main>
+
   <script src="script.js"></script>
 </body>
+
 </html>

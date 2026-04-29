@@ -2,7 +2,19 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Helvetica, sans-serif;
+  font-family: 'Inter', Helvetica, sans-serif;
+}
+
+/* Screen reader only - accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
 body {
@@ -25,6 +37,15 @@ body {
   border-radius: 8px;
   text-decoration: none;
   color: white;
+  font-weight: 600;
+}
+
+.nav-btn:focus,
+.card-btn:focus,
+.back-btn:focus,
+.cta-btn:focus {
+  outline: 3px solid #7c3aed;
+  outline-offset: 3px;
 }
 
 /* ===== HERO ===== */
@@ -35,12 +56,14 @@ body {
 
 .hero h2 {
   font-size: 3rem;
+  font-weight: 700;
   margin-bottom: 10px;
 }
 
 .hero p {
   color: #cbd5e1;
   margin-bottom: 20px;
+  font-size: 1.1rem;
 }
 
 .cta-btn {
@@ -50,6 +73,8 @@ body {
   text-decoration: none;
   color: white;
   font-size: 1rem;
+  font-weight: 600;
+  display: inline-block;
 }
 
 /* ===== FEATURES GRID ===== */
@@ -71,6 +96,7 @@ body {
   justify-content: space-between;
   height: 180px;
   transition: 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .card:hover {
@@ -80,12 +106,14 @@ body {
 
 .card h3 {
   margin-bottom: 8px;
+  font-weight: 600;
 }
 
 .card p {
   color: #cbd5e1;
   margin-bottom: 20px;
-  line-height: 1.4;
+  line-height: 1.5;
+  font-size: 0.95rem;
 }
 
 .card-btn {
@@ -96,6 +124,7 @@ body {
   color: #60a5fa;
   text-decoration: none;
   font-size: 0.9rem;
+  font-weight: 600;
   transition: 0.3s;
   width: fit-content;
 }
@@ -130,10 +159,13 @@ body {
   color: #60a5fa;
   letter-spacing: 2px;
   margin-bottom: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
 .journey-section h1 {
   font-size: 2.8rem;
+  font-weight: 700;
   margin-bottom: 50px;
 }
 
@@ -160,8 +192,9 @@ body {
 }
 
 .step-num {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #94a3b8;
+  font-weight: 600;
 }
 
 .journey-card::after {
@@ -170,15 +203,19 @@ body {
   right: 20px;
   bottom: 10px;
   font-size: 80px;
-  color: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.04);
+  pointer-events: none;
 }
 
 .journey-card h3 {
   margin: 10px 0;
+  font-weight: 600;
 }
 
 .journey-card p {
   color: #cbd5e1;
+  line-height: 1.5;
+  font-size: 0.95rem;
 }
 
 /* ===== BACK BUTTON ===== */
@@ -190,6 +227,12 @@ body {
   border-radius: 10px;
   text-decoration: none;
   color: white;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: #6d28d9;
 }
 
 /* ===== QUIZ ===== */
@@ -202,6 +245,12 @@ body {
   align-items: center;
 }
 
+.center-page h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
 .quiz-card {
   width: 100%;
   max-width: 400px;
@@ -211,11 +260,14 @@ body {
   backdrop-filter: blur(12px);
   text-align: center;
   margin-top: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 #question {
   font-size: 1.2rem;
   margin-bottom: 20px;
+  line-height: 1.5;
+  font-weight: 600;
 }
 
 #options button {
@@ -228,11 +280,25 @@ body {
   color: white;
   cursor: pointer;
   transition: 0.3s;
+  font-size: 1rem;
+  font-family: 'Inter', Helvetica, sans-serif;
 }
 
 #options button:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
   background: #1d4ed8;
+}
+
+#options button:focus {
+  outline: 3px solid #7c3aed;
+  outline-offset: 2px;
+}
+
+#score {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #60a5fa;
 }
 
 /* ===== AI CHAT ===== */
@@ -245,7 +311,8 @@ body {
 
 .ai-title {
   font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
 .chat-box {
@@ -255,6 +322,8 @@ body {
   overflow-y: auto;
   padding: 15px;
   margin-bottom: 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .message {
@@ -263,11 +332,14 @@ body {
   border-radius: 15px;
   max-width: 75%;
   word-wrap: break-word;
+  line-height: 1.5;
+  font-size: 0.95rem;
 }
 
 .user {
   background: #2563eb;
   margin-left: auto;
+  text-align: right;
 }
 
 .ai {
@@ -285,14 +357,20 @@ body {
   flex: 1;
   padding: 12px;
   border-radius: 10px;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   background: rgba(255, 255, 255, 0.1);
   color: white;
   font-size: 1rem;
+  font-family: 'Inter', Helvetica, sans-serif;
 }
 
 .ai-input input::placeholder {
   color: #94a3b8;
+}
+
+.ai-input input:focus {
+  outline: 3px solid #7c3aed;
+  outline-offset: 2px;
 }
 
 .ai-input button {
@@ -304,6 +382,7 @@ body {
   cursor: pointer;
   white-space: nowrap;
   font-size: 1rem;
+  font-weight: 600;
   transition: 0.3s;
 }
 
@@ -311,11 +390,17 @@ body {
   background: #6d28d9;
 }
 
+.ai-input button:focus {
+  outline: 3px solid #60a5fa;
+  outline-offset: 2px;
+}
+
 /* ===== FOOTER ===== */
 footer {
   text-align: center;
   padding: 20px;
   color: #94a3b8;
+  font-size: 0.9rem;
 }
 
 /* ===== TABLET (max 900px) ===== */
@@ -364,7 +449,6 @@ footer {
     font-size: 0.9rem;
   }
 
-  /* ONE CARD PER ROW on mobile */
   .features {
     grid-template-columns: 1fr;
     padding: 20px;
@@ -376,7 +460,6 @@ footer {
     padding: 20px;
   }
 
-  /* ONE JOURNEY/LEARN CARD PER ROW on mobile */
   .journey-grid {
     grid-template-columns: 1fr;
     gap: 15px;
@@ -399,7 +482,6 @@ footer {
     display: none;
   }
 
-  /* QUIZ - remove big empty space at top */
   .center-page {
     justify-content: flex-start;
     padding-top: 50px;
@@ -419,7 +501,6 @@ footer {
     font-size: 0.9rem;
   }
 
-  /* AI CHAT */
   .ai-container {
     padding: 20px 15px;
   }
@@ -443,7 +524,7 @@ footer {
   }
 
   footer {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -458,7 +539,8 @@ footer {
     font-size: 1.3rem;
   }
 
-  .card, .journey-card {
+  .card,
+  .journey-card {
     padding: 15px;
   }
 }

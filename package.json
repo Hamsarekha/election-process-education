@@ -1,14 +1,22 @@
 {
-  "name": "election-process-education",
+  "name": "votesmart-election-education",
   "version": "1.0.0",
+  "description": "AI-powered election education platform for Indian citizens",
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "node test.js"
   },
+  "keywords": ["election", "voting", "education", "AI", "democracy"],
+  "author": "VoteSmart",
+  "license": "MIT",
   "dependencies": {
     "compression": "^1.7.4",
     "cors": "^2.8.5",
     "express": "^4.21.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }

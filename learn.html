@@ -1,58 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Learn Concepts</title>
+  <meta name="description" content="Learn key election concepts on VoteSmart - voting, EVM, Election Commission and more.">
+  <meta name="theme-color" content="#0f172a">
+  <title>Learn Concepts - VoteSmart</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5FVMT0S0B"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-Z5FVMT0S0B');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5FVMT0S0B"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Z5FVMT0S0B');
+  </script>
 </head>
 
 <body>
 
-  <section class="journey-section">
+  <main class="journey-section" role="main">
 
     <p class="subtitle">LEARN CONCEPTS</p>
     <h1>Understand Elections</h1>
 
-    <div class="journey-grid">
+    <div class="journey-grid" role="list" aria-label="Election concepts">
 
-      <div class="journey-card">
-        <span class="step-num">01</span>
+      <article class="journey-card" role="listitem">
+        <span class="step-num" aria-label="Concept 1">01</span>
         <h3>🗳️ Voting</h3>
         <p>Voting is the process where citizens choose their leaders by casting their vote in elections.</p>
-      </div>
+      </article>
 
-      <div class="journey-card">
-        <span class="step-num">02</span>
+      <article class="journey-card" role="listitem">
+        <span class="step-num" aria-label="Concept 2">02</span>
         <h3>🏛️ Election Commission</h3>
         <p>An independent body responsible for conducting free and fair elections across the country.</p>
-      </div>
+      </article>
 
-      <div class="journey-card">
-        <span class="step-num">03</span>
+      <article class="journey-card" role="listitem">
+        <span class="step-num" aria-label="Concept 3">03</span>
         <h3>⚡ EVM</h3>
         <p>Electronic Voting Machines securely record votes and reduce chances of manipulation.</p>
-      </div>
+      </article>
 
-      <div class="journey-card">
-        <span class="step-num">04</span>
+      <article class="journey-card" role="listitem">
+        <span class="step-num" aria-label="Concept 4">04</span>
         <h3>📊 Results</h3>
         <p>Votes are counted and results are announced transparently after polling ends.</p>
-      </div>
+      </article>
 
     </div>
 
-    <a href="index.html" class="back-btn">← Back</a>
+    <a href="index.html" class="back-btn" aria-label="Go back to home page">← Back</a>
 
-  </section>
+  </main>
 
 </body>
 
