@@ -2,17 +2,14 @@
 ## Election Process Education Platform
 =======
 # VoteSmart — AI-Powered Election Education Platform
->>>>>>> 590e68a (Updated project changes)
 
 An interactive web platform that educates Indian citizens about the election process using AI.
 
-<<<<<<< HEAD
 ---
 
 ## Live Website
 =======
 ## Live Demo
->>>>>>> 590e68a (Updated project changes)
 https://election-service-766618428685.asia-south1.run.app
 
 ## Features
@@ -21,7 +18,6 @@ https://election-service-766618428685.asia-south1.run.app
 - **Quiz Yourself** — Test your civic knowledge
 - **Ask AI** — Powered by Groq Llama 3.3-70B
 
-<<<<<<< HEAD
 ## Overview
 This project is designed to educate users about elections through interactive modules, quizzes, and an AI-powered assistant. It simplifies concepts like voting, democracy, and election procedures into easy-to-understand content.
 =======
@@ -32,11 +28,11 @@ This project is designed to educate users about elections through interactive mo
 - **Deployment:** Google Cloud Run
 - **Analytics:** Google Analytics (GA4)
 - **Fonts:** Google Fonts (Inter)
->>>>>>> 590e68a (Updated project changes)
+
 
 ## Setup & Installation
 
-<<<<<<< HEAD
+
 ## Features
 
 ### Interactive Journey
@@ -132,14 +128,13 @@ Open in browser:
 ```bash
 export GROQ_API_KEY=your_groq_api_key_here
 ```
->>>>>>> 590e68a (Updated project changes)
 
 ### 3. Run locally
 ```bash
 npm start
 ```
 
-<<<<<<< HEAD
+
 ---
 
 ## Future Improvements
