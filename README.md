@@ -1,6 +1,6 @@
 ![Preview](screenshot.png)
 ## Election Process Education Platform
-=======
+
 # VoteSmart — AI-Powered Election Education Platform
 
 An interactive web platform that educates Indian citizens about the election process using AI.
@@ -8,7 +8,7 @@ An interactive web platform that educates Indian citizens about the election pro
 ---
 
 ## Live Website
-=======
+
 ## Live Demo
 https://election-service-766618428685.asia-south1.run.app
 
@@ -20,7 +20,7 @@ https://election-service-766618428685.asia-south1.run.app
 
 ## Overview
 This project is designed to educate users about elections through interactive modules, quizzes, and an AI-powered assistant. It simplifies concepts like voting, democracy, and election procedures into easy-to-understand content.
-=======
+
 ## Tech Stack
 - **Frontend:** HTML5, CSS3, JavaScript (ES6+)
 - **Backend:** Node.js + Express
@@ -106,11 +106,11 @@ election-process-education/
 ---
 
 ##  Run Locally
-=======
+
 ### Prerequisites
 - Node.js >= 18.0.0
 - Groq API key (free at console.groq.com)
->>>>>>> 590e68a (Updated project changes)
+
 
 ### 1. Clone and install
 ```bash
@@ -121,7 +121,7 @@ npm install
 node server.js
 ```
 Open in browser:
-=======
+
 ```
 
 ### 2. Set environment variables
@@ -150,7 +150,7 @@ npm start
 S Hamsarekha
 
 
-=======
+
 ### 4. Deploy to Google Cloud Run
 ```bash
 gcloud run deploy election-service --source . --region asia-south1
