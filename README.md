@@ -113,24 +113,21 @@ election-process-education/
 
 
 ### 1. Clone and install
-```bash
+```
 git clone <repo-url>
 cd votesmart
 npm install
-<<<<<<< HEAD
 node server.js
 ```
 Open in browser:
 
-```
-
 ### 2. Set environment variables
-```bash
+```
 export GROQ_API_KEY=your_groq_api_key_here
 ```
 
 ### 3. Run locally
-```bash
+```
 npm start
 ```
 
